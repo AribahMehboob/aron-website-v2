@@ -5,7 +5,7 @@
 
   // ── Multilingual Greetings (auto-detected on load) ──────────────────────────
   var GREETINGS = {
-    "en": "Welcome to ARON! 👋<br>I can help with consultancy, ARON membership, ARON Insight, live demonstrations, energy support, food safety and EHO prep — or connect you with our trusted partners.<br>What are you working on?",
+    "en": "Welcome to ARON! 👋<br>I can help with consultancy, ARON membership, ARON Insight, live demonstrations, energy support, food safety and EHO prep  or connect you with our trusted partners.<br>What are you working on?",
     "ur": "ARON میں خوش آمدید! 👋<br>میں آپ کی مشاورت، ARON رکنیت، لائیو ڈیمونسٹریشن، توانائی، فوڈ سیفٹی اور EHO تیاری میں مدد کر سکتا ہوں۔<br>آپ کس چیز پر کام کر رہے ہیں؟",
     "hi": "ARON में आपका स्वागत है! 👋<br>मैं परामर्श, ARON सदस्यता, लाइव डेमो, ऊर्जा, खाद्य सुरक्षा और EHO तैयारी में मदद कर सकता हूँ।<br>आप किस पर काम कर रहे हैं?",
     "bn": "ARON-এ স্বাগতম! 👋<br>আমি পরামর্শ, ARON সদস্যপদ, লাইভ ডেমো, শক্তি সহায়তা, খাদ্য নিরাপত্তা এবং EHO প্রস্তুতিতে সাহায্য করতে পারি।<br>আপনি কীসে কাজ করছেন?",
@@ -14,15 +14,6 @@
     "de": "Willkommen bei ARON! 👋<br>Ich kann bei Beratung, ARON-Mitgliedschaft, Live-Demos, Energie und Lebensmittelsicherheit helfen.<br>Woran arbeiten Sie?",
     "es": "¡Bienvenido a ARON! 👋<br>Puedo ayudarte con consultoría, membresía ARON, demostraciones en vivo, energía y seguridad alimentaria.<br>¿En qué estás trabajando?"
   };
-
-  // ── Quick Action Chips ────────────────────────────────────────────────────────
-  var CHIPS = [
-    "Consultancy",
-    "ARON Energy quote",
-    "Book a demonstration",
-    "EHO / HACCP help",
-    "I need chefs"
-  ];
 
   // ── Chat History (kept for conversation context) ──────────────────────────────
   var chatHistory = [];
@@ -62,9 +53,6 @@
 
       // Messages body
       '<div class="chat-body" id="chatBody"></div>' +
-
-      // Quick chips
-      '<div class="chat-chips" id="chatChips"></div>' +
 
       // Language support banner — below chips, above input
       '<div class="chat-lang-banner">' +
@@ -130,14 +118,30 @@
     var body   = document.getElementById("chatBody");
     var form   = document.getElementById("chatForm");
     var input  = document.getElementById("chatInput");
-    var chips  = document.getElementById("chatChips");
+
+    // ── Format bot response (markdown bold, links, line breaks) ────────────────
+    function formatBotResponse(text) {
+      if (!text) return "";
+      var formatted = text;
+      // Convert markdown bold **text** to <strong>text</strong>
+      formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      // Convert markdown italic *text* to <em>text</em>
+      formatted = formatted.replace(/\*(.*?)\*/g, '<em>$1</em>');
+      // Convert markdown links [title](url) to <a href="url" target="_blank" rel="noopener">title</a>
+      formatted = formatted.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+      // Convert plain URLs (not already inside href) to clickable links
+      formatted = formatted.replace(/(^|[^"'>])(https?:\/\/[^\s<]+)/g, '$1<a href="$2" target="_blank" rel="noopener">$2</a>');
+      // Convert single newlines to <br>
+      formatted = formatted.replace(/\n/g, '<br>');
+      return formatted;
+    }
 
     // ── Add message bubble to chat ──────────────────────────────────────────
     function add(role, html) {
       var el = document.createElement("div");
       el.className = "msg " + role;
       el.innerHTML = role === "bot"
-        ? '<div class="bubble">' + html + "</div>"
+        ? '<div class="bubble">' + formatBotResponse(html) + "</div>"
         : '<div class="bubble">' + escapeHtml(html) + "</div>";
       body.appendChild(el);
       body.scrollTop = body.scrollHeight;
@@ -197,19 +201,6 @@
         console.error("Chat error:", err);
       }
     }
-
-    // ── Render quick action chips ───────────────────────────────────────────
-    CHIPS.forEach(function (label) {
-      var b = document.createElement("button");
-      b.className = "chip";
-      b.type = "button";
-      b.textContent = label;
-      b.addEventListener("click", function () {
-        add("user", label);
-        respond(label);
-      });
-      chips.appendChild(b);
-    });
 
     // ── Show greeting in detected language ──────────────────────────────────
     var detectedLang = detectLanguage();

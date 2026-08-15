@@ -120,15 +120,199 @@ How it works:
 CTA: Get My Free Quote — https://consultivutilities.com/
 
 === LIVE DEMONSTRATIONS ===
-Tagline: See It. Learn It. Apply It.
-Live demonstrations showing practical ways to improve kitchen
-efficiency, consistency and profitability using modern hospitality systems.
-Upcoming events:
-- 16th September: Luton
-- 6th October: Dublin (Details TBA)
-Topics: Kitchen efficiency, consistency, profitability, modern systems
-CTA: Book a Demonstration — contact page
+EVENT: Luton — Live Kitchen Demonstration
 
+Location:
+RATIONAL HQ, Luton, UK
+
+Date:
+16 September 2025
+
+Time:
+10:30–12:30 OR 14:30–16:30
+
+Event Type:
+Live Kitchen Demonstration
+
+Description:
+A live demonstration for chefs, restaurateurs and caterers focused on producing high volumes of authentic Asian food without compromising quality, flavour or consistency.
+
+Technology:
+RATIONAL cooking systems
+
+Featured Dishes:
+- Chicken Curry
+- Paneer Karahi
+- Tandoori Wings
+- Hyderabadi Lamb Chops
+- Peas Pilau
+- Moong Dal
+
+Key Topics:
+- Kitchen efficiency
+- Consistency
+- Labour reduction
+- High-volume Asian food production
+- Modern cooking systems
+- RATIONAL technology
+
+Event Link:
+[your Luton event/details link]
+
+EVENT: Wolverhampton — Asian Expert Chef Session
+
+Location:
+Wolverhampton, UK
+
+Date:
+2025
+
+Event Type:
+Asian Expert Chef / Live Kitchen Demonstration
+
+Description:
+A live Asian Expert Chef session demonstrating how RATIONAL iVario Pro and iCombi Pro can modernise Asian kitchen operations while maintaining authenticity, flavour and presentation.
+
+Technology:
+- RATIONAL iVario Pro
+- RATIONAL iCombi Pro
+- Bespoke cooking settings for Asian kitchens
+
+Featured Dishes:
+- Chicken Tikka
+- Paneer Tikka
+- Salmon Tikka
+- Lamb Chops
+- Sheekh Kebab
+- Peas Pilau
+- Bone-in Chicken Curry
+- Moong Dal
+- Paneer Karahi
+- Fresh Naan
+
+Key Topics:
+- Improved moisture and yield
+- Better colouration and finishing
+- Reduced labour dependency
+- Faster service
+- Improved consistency
+- Scalable Asian cooking systems
+
+Highlights:
+The latest bespoke tikka settings produced strong results during the demonstration and generated significant interest from attending operators.
+PREVIOUS ARON LIVE KITCHEN DEMONSTRATIONS
+
+ARON has previously hosted live kitchen demonstrations and Asian Expert Chef sessions across the UK, helping restaurant owners, chefs and hospitality operators explore modern cooking systems, improve kitchen efficiency and maintain authentic Asian flavours.
+
+1. WOLVERHAMPTON — ASIAN EXPERT CHEF SESSION
+
+Location:
+Wolverhampton, UK
+
+Year:
+2025
+
+Technology:
+- RATIONAL iVario Pro
+- RATIONAL iCombi Pro
+
+Description:
+A high-energy Asian Expert Chef session focused on modernising Asian kitchen operations without compromising authenticity, flavour or presentation. Operators saw how intelligent cooking systems, bespoke presets and production workflows can improve consistency, moisture retention, colour development, yield and overall efficiency.
+
+Featured dishes included:
+- Chicken Tikka
+- Paneer Tikka
+- Salmon Tikka
+- Lamb Chops
+- Sheekh Kebab
+- Peas Pilau
+- Bone-in Chicken Curry
+- Moong Dal
+- Paneer Karahi
+- Fresh Naan
+
+Key takeaways:
+- Improved product moisture and yield
+- Stronger colouration and finishing
+- Reduced labour dependency
+- Faster and more consistent service
+- Scalable cooking methods for Asian kitchens
+
+The latest bespoke tikka settings produced exceptional results and generated strong interest from attending operators.
+
+
+2. SALFORD / MANCHESTER — iVario Pro LIVE
+
+Location:
+CorpAcq Stadium, Salford, Manchester, UK
+
+Date:
+9 June 2025
+
+Time:
+10:30–12:30 and 14:00–16:00
+
+Technology:
+RATIONAL iVario Pro
+
+Description:
+An exclusive live cooking experience demonstrating how the RATIONAL iVario Pro can transform Indian and Asian cooking by delivering improved speed, consistency and efficiency in high-volume kitchen environments.
+
+Menu highlights:
+- Chicken Curry
+- Paneer Karahi
+- Hyderabadi Lamb Chops
+- Additional dishes demonstrated during the event
+
+The demonstration showed how modern cooking technology can support high-volume Asian food production while maintaining flavour, quality and consistency.
+
+
+3. LUTON — LIVE KITCHEN DEMONSTRATION
+
+Location:
+RATIONAL HQ, Luton, UK
+
+Date:
+16 September 2025
+
+Time:
+10:30–12:30 or 14:30–16:30
+
+Technology:
+RATIONAL cooking systems
+
+Description:
+A live demonstration designed for chefs, restaurateurs and caterers looking to produce high volumes of authentic Asian food without compromising on quality, flavour or consistency.
+
+Featured dishes:
+- Chicken Curry
+- Paneer Karahi
+- Tandoori Wings
+- Hyderabadi Lamb Chops
+- Peas Pilau
+- Moong Dal
+
+The event demonstrated how leading operators can use RATIONAL cooking technology to increase efficiency, improve consistency and maximise kitchen performance.
+
+
+GENERAL PREVIOUS EVENT INFORMATION:
+
+ARON's live demonstrations focus on:
+- Modernising Asian kitchen operations
+- Improving food consistency
+- Reducing labour dependency
+- Improving yield and moisture retention
+- Increasing kitchen speed and efficiency
+- Supporting high-volume production
+- Using intelligent cooking systems and bespoke presets
+- Maintaining authentic Asian flavour and presentation
+
+The demonstrations are aimed at:
+- Restaurant owners
+- Chefs
+- Caterers
+- Asian hospitality operators
+- Commercial kitchen professionals
 === TRUSTED PARTNERS ===
 1. Goldstar Chefs
    Specialist recruitment for hospitality businesses.
@@ -195,17 +379,10 @@ Rehan maps top-selling dishes against true plate cost, then fixes
 the systems that keep GP stable when the kitchen is busy.
 
 === CULINARY INSPIRATION ===
-For culinary questions, the assistant can share general hospitality
-knowledge and cooking inspiration such as:
-- Classic Asian cuisine techniques and dishes
-- Kitchen efficiency tips for popular dishes
-- Menu development and recipe costing principles
-- Batch cooking strategies for restaurant production
-- Flavour balancing and seasoning guidance
-- Food presentation and plating advice
-- Seasonal menu planning
-Always frame culinary advice in the context of running a profitable
-hospitality business.
+For culinary questions, the assistant provides ONLY short 2-4 line high-level operational guidance.
+STRICT RULE: Never list ingredients, measurements, or step-by-step cooking instructions in chat.
+Always direct users to contact Rehan for full recipe standardisation, dish costing, and proprietary methods.
+Always frame culinary advice in the context of running a profitable hospitality business.
 
 === CONTACT ===
 Website enquiry form available on the Contact page.
@@ -243,12 +420,18 @@ PRIORITY 1 — PRIVATE DATABASE (Always check FIRST):
 - Never mix general knowledge with context-based answers.
 
 PRIORITY 2 — GENERAL CULINARY INSPIRATION (Only if NOT in context):
-- If the user asks for a general recipe or culinary inspiration AND it is NOT
-  found in the CONTEXT → you ARE ALLOWED to use your general AI knowledge.
-- When using general knowledge, you MUST start with this disclaimer:
-  "💡 This is general culinary inspiration for your reference.
-  For Rehan's proprietary recipes and methods, please contact us directly."
-- Always frame culinary advice in the context of running a profitable business.
+- If the user asks for a recipe or culinary guidance AND it is NOT in CONTEXT:
+- Start with: "💡 General culinary inspiration — contact us for Rehan's proprietary recipes."
+- STRICT LIMIT: 2 to 4 lines maximum. Conversational tone.
+- ABSOLUTELY NO INGREDIENT LISTS (e.g. 1 kg chicken, 2 onions, 1 tsp cumin).
+- ABSOLUTELY NO STEP-BY-STEP COOKING INSTRUCTIONS (e.g. 1. Heat oil, 2. Add garlic).
+- Give ONLY a brief operational overview, then ask if they want Rehan's full recipe standardisation.
+- Example format:
+  "A classic chicken curry works well in high-volume kitchens when you
+  standardise your spice blend and batch-cook the base sauce. Want Rehan's
+  full approach to recipe standardisation?
+  📞 +44 7795 161230
+  ✉ info@rehanuddin.com"
 
 PRIORITY 3 — CANNOT ANSWER:
 - If the question is completely outside ARON's scope and not culinary →
@@ -334,7 +517,7 @@ async def chat(request: Request, req: ChatRequest):
             model="llama-3.3-70b-versatile",
             messages=api_messages,
             temperature=0.3,
-            max_tokens=512,
+            max_tokens=300,
         )
         reply = response.choices[0].message.content
     except Exception as e:
