@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARON Insight</title>
+<title>ARON Insight | Hospitality Consultancy Podcast | Rehan Uddin</title>
 <meta name="description" content="ARON Insight — podcast conversations that challenge hospitality thinking and help restaurant owners build stronger, more profitable businesses.">
 <meta property="og:title" content="ARON Insight | Better Questions. Better Businesses.">
 <meta property="og:description" content="ARON Insight — podcast conversations that challenge hospitality thinking and help restaurant owners build stronger, more profitable businesses.">
@@ -14,9 +14,60 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/styles.css?v=2.0">
+<style>
+/* ── Navbar Secure Your Seat Button ── */
+.nav-seat-btn{display:inline-flex !important;align-items:center !important;justify-content:center !important;background:linear-gradient(145deg,#1a1a1a,#262525) !important;color:#ffffff !important;padding:10px 22px !important;font-family:"Public Sans",sans-serif !important;font-size:0.8rem !important;font-weight:700 !important;text-transform:uppercase !important;letter-spacing:0.06em !important;text-decoration:none !important;border-radius:999px !important;white-space:nowrap !important;cursor:pointer !important;box-shadow:0 4px 16px rgba(180,135,58,0.35) !important;animation:secureSeatPulse 2.4s ease-in-out infinite,goldBlink 1s ease-in-out infinite !important;}
+.nav-seat-btn:hover{background:linear-gradient(145deg,#d8a348,#b88634) !important;color:#ffffff !important;transform:translateY(-2px) !important;box-shadow:0 8px 24px rgba(180,135,58,0.5) !important;text-decoration:none !important;animation:none !important;}
+@keyframes secureSeatPulse{0%,100%{box-shadow:0 4px 16px rgba(180,135,58,0.35);}50%{box-shadow:0 4px 24px rgba(180,135,58,0.7),0 0 0 5px rgba(180,135,58,0.18);}}
+@keyframes goldBlink{0%,100%{opacity:1;}50%{opacity:0.15;}}
+
+/* ── WhatsApp Float ── */
+.whatsapp-float{position:fixed !important;right:22px !important;bottom:94px !important;width:56px !important;height:56px !important;display:flex !important;align-items:center !important;justify-content:center !important;background:#25D366 !important;color:#ffffff !important;border-radius:50% !important;font-size:28px !important;text-decoration:none !important;z-index:299 !important;box-shadow:0 8px 22px rgba(37,211,102,0.38) !important;transition:transform 0.25s ease,box-shadow 0.25s !important;}
+.whatsapp-float:hover{color:#ffffff !important;transform:translateY(-3px) scale(1.06) !important;box-shadow:0 12px 28px rgba(37,211,102,0.52) !important;text-decoration:none !important;}
+
+/* ── Previous Events ── */
+.prev-events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px;}
+.prev-event-card{background:var(--paper-3);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .25s,box-shadow .25s;cursor:pointer;}
+.prev-event-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);}
+.prev-event-img{aspect-ratio:16/9;overflow:hidden;background:var(--paper-2);position:relative;}
+.prev-event-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.prev-event-card:hover .prev-event-img img{transform:scale(1.04);}
+.prev-event-indicators{position:absolute;bottom:10px;left:12px;display:flex;gap:6px;}
+.prev-event-indicator{background:rgba(20,19,18,0.7);color:#fff;font-size:0.7rem;font-weight:700;padding:3px 9px;border-radius:999px;backdrop-filter:blur(4px);display:flex;align-items:center;gap:4px;}
+.prev-event-body{padding:20px 24px;}
+.prev-event-location{font-size:0.7rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.prev-event-body h3{font-size:1.05rem;margin-bottom:6px;line-height:1.3;}
+.prev-event-date{font-size:0.8rem;color:var(--ink-soft);margin-bottom:10px;}
+.prev-event-body p{font-size:0.88rem;color:var(--ink-soft);line-height:1.6;margin-bottom:16px;}
+
+/* ── FAQ ── */
+.faq-list{display:flex;flex-direction:column;gap:12px;margin-top:32px;}
+.faq-item{background:var(--paper-3);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+.faq-question{width:100%;background:none;border:none;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;text-align:left;font-family:"Public Sans",sans-serif;font-size:1rem;font-weight:700;color:var(--ink);transition:background .2s;}
+.faq-question:hover{background:var(--paper-2);}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--paper-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,transform .3s;color:var(--gold);font-size:.8rem;}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--gold);color:#fff;}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s ease;}
+.faq-answer-inner{padding:0 24px 20px;font-size:.93rem;color:var(--ink-soft);line-height:1.75;}
+.faq-item.open .faq-answer{max-height:400px;}
+.faq-categories{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;margin-top:8px;}
+.faq-cat-btn{padding:7px 16px;border-radius:999px;border:1.5px solid var(--line);background:none;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;color:var(--ink-soft);transition:all .2s;font-family:"Public Sans",sans-serif;}
+.faq-cat-btn.active,.faq-cat-btn:hover{background:var(--gold);color:#fff;border-color:var(--gold);}
+
+/* ── Responsive ── */
+@media(max-width:900px){.prev-events-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.prev-events-grid{grid-template-columns:1fr;}}
+@media(max-width:980px){nav{display:flex !important;align-items:center !important;justify-content:space-between !important;}.nav-seat-btn{display:inline-flex !important;padding:7px 14px !important;font-size:0.72rem !important;letter-spacing:0.04em !important;margin-left:auto !important;margin-right:12px !important;}.burger{margin-left:0 !important;}}
+@media(max-width:640px){.chat-fab{width:48px !important;height:48px !important;right:16px !important;bottom:16px !important;}.whatsapp-float{width:48px !important;height:48px !important;right:16px !important;bottom:74px !important;font-size:24px !important;}}
+@media(max-width:480px){.nav-seat-btn{padding:6px 10px !important;font-size:0.65rem !important;letter-spacing:0.03em !important;margin-right:8px !important;}}
+</style>
 </head>
 <body>
+
+<a href="https://wa.me/447795161230" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with ARON on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 <div id="intro">
   <div class="intro-mark"><img src="assets/images/aron-logo.png" alt="ARON"></div>
@@ -33,10 +84,10 @@
       <a href="consultancy.html">Consultancy</a>
       <a href="aron.html">ARON</a>
       <a href="insight.html" class="active">Insight</a>
-      <a href="energy.html">Energy</a>
-      <a href="live-demonstrations.html">Demonstrations <span style="display:inline-block;background:#b4873a;color:white;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:5px;vertical-align:middle;animation: blink 1.5s infinite;letter-spacing:0.03em;">Secure Your Seat</span></a>
+      <a href="https://consultivutilities.com/" target="_blank" rel="noopener">Energy</a>
+      <a href="live-demonstrations.html">Demonstrations</a>
     </div>
-    <a href="contact.html" class="nav-cta">Contact</a>
+    <a href="live-demonstrations.html" class="nav-seat-btn" aria-label="Secure your seat at a live demonstration">Secure Your Seats</a>
     <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
 </header>
@@ -49,13 +100,14 @@
     <a href="consultancy.html">Consultancy</a>
     <a href="aron.html">ARON</a>
     <a href="insight.html" class="active">ARON Insight</a>
-    <a href="energy.html">ARON Energy</a>
-    <a href="live-demonstrations.html">Live Demonstrations <span style="display:inline-block;background:#b4873a;color:white;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:5px;vertical-align:middle;animation: blink 1.5s infinite;letter-spacing:0.03em;">Secure Your Seat</span></a>
+    <a href="https://consultivutilities.com/" target="_blank" rel="noopener">ARON Energy</a>
+    <a href="live-demonstrations.html">Live Demonstrations <span style="display:inline-block;background:#b4873a;color:white;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:5px;vertical-align:middle;animation:blink 1.5s infinite;letter-spacing:0.03em;">Secure Your Seat</span></a>
     <a href="contact.html" class="drawer-cta">Contact</a>
   </nav>
 </div>
 <div class="drawer-overlay" id="drawerOverlay"></div>
 
+<!-- ── HERO ── -->
 <section class="page-hero">
   <div class="wrap">
     <h1 class="reveal">Better Questions. Better Businesses.</h1>
@@ -63,66 +115,309 @@
   </div>
 </section>
 
-  <section class="block">
-    <div class="wrap">
-      <div class="pillar-rows">
-        <div class="pillar-row reveal">
-          <div class="pillar-img"><img src="assets/images/insight.jpg" alt="ARON Insight podcast studio" loading="lazy" width="1200" height="840"></div>
-          <div class="pillar-text">
-            <span class="eyebrow">The Podcast</span>
-            <h3>Honest conversations about running restaurants</h3>
-            <p>Operators, chefs and specialists talking about what actually moves a hospitality business , not theory, not hype.</p>
-            <div style="margin-top:22px"><a href="contact.html" class="btn btn-solid">Watch ARON Insight</a></div>
-          </div>
+<!-- ── PODCAST INTRO ── -->
+<section class="block">
+  <div class="wrap">
+    <div class="pillar-rows">
+      <div class="pillar-row reveal">
+        <div class="pillar-img"><img src="assets/images/insight.jpg" alt="ARON Insight podcast studio" loading="lazy" width="1200" height="840"></div>
+        <div class="pillar-text">
+          <span class="eyebrow">The Podcast</span>
+          <h3>Honest conversations about running restaurants</h3>
+          <p>Operators, chefs and specialists talking about what actually moves a hospitality business — not theory, not hype.</p>
+          <div style="margin-top:22px"><a href="contact.html" class="btn btn-solid">Watch ARON Insight</a></div>
         </div>
       </div>
-      <div class="card-grid" style="margin-top:34px">
-        <div class="card reveal"><h3>Operations</h3><p>Systems, kitchens and standards that hold up under pressure.</p></div>
-        <div class="card reveal reveal-d1"><h3>Money</h3><p>Margin, menu, labour and the numbers owners avoid.</p></div>
-        <div class="card reveal reveal-d2"><h3>People</h3><p>Recruitment, retention and building managers you can trust.</p></div>
-      </div>
     </div>
-  </section>
+    <div class="card-grid" style="margin-top:34px">
+      <div class="card reveal"><h3>Operations</h3><p>Systems, kitchens and standards that hold up under pressure.</p></div>
+      <div class="card reveal reveal-d1"><h3>Money</h3><p>Margin, menu, labour and the numbers owners avoid.</p></div>
+      <div class="card reveal reveal-d2"><h3>People</h3><p>Recruitment, retention and building managers you can trust.</p></div>
+    </div>
+  </div>
+</section>
 
+<!-- ── PREVIOUS EVENTS ── -->
+<section class="block alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Previous Events</span>
+      <h2>See what we've been doing</h2>
+      <span class="arc"><svg viewBox="0 0 64 14"><path d="M2 12 Q32 -6 62 12" stroke="#b4873a" stroke-width="2" fill="none"/></svg></span>
+    </div>
+
+    <div class="prev-events-grid">
+
+      <!-- WOLVERHAMPTON -->
+      <div class="prev-event-card reveal">
+        <div class="prev-event-img">
+          <img src="assets/images/Wolverhampton.jpg" alt="Wolverhampton Asian Expert Chef demonstration" loading="lazy">
+          <div class="prev-event-indicators">
+            <span class="prev-event-indicator"><i class="fa-solid fa-images"></i> Photos</span>
+            <span class="prev-event-indicator"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</span>
+          </div>
+        </div>
+        <div class="prev-event-body">
+          <div class="prev-event-location">Wolverhampton, UK</div>
+          <h3>Asian Expert Chef — Live Demonstration</h3>
+          <div class="prev-event-date">2025</div>
+          <p>A high-energy session showcasing the RATIONAL iVario Pro and iCombi Pro with bespoke settings for Asian dishes — improving consistency, yield and kitchen efficiency.</p>
+          <a href="https://www.linkedin.com/posts/rehan-uddin-817406135_asianhospitality-restaurantowner-asianchef-activity-7463713003138560000-5sWo?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEx6Cn8BiGY8B49yun8m14FtFwim_oFABX4" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:.82rem;padding:8px 16px;display:inline-block;">View on LinkedIn →</a>
+        </div>
+      </div>
+
+      <!-- SALFORD -->
+      <div class="prev-event-card reveal reveal-d1">
+        <div class="prev-event-img">
+          <img src="assets/images/Salford.jpg" alt="Salford Asian Cuisine Expert Chef demonstration" loading="lazy">
+          <div class="prev-event-indicators">
+            <span class="prev-event-indicator"><i class="fa-solid fa-images"></i> Photos</span>
+            <span class="prev-event-indicator"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</span>
+          </div>
+        </div>
+        <div class="prev-event-body">
+          <div class="prev-event-location">Salford, UK</div>
+          <h3>Asian Cuisine Expert Chef Demonstration</h3>
+          <div class="prev-event-date">29 April 2025</div>
+          <p>An expert Asian cuisine demonstration focused on the RATIONAL iVario Pro, showcasing faster production, consistent results and authentic Asian flavours.</p>
+          <a href="https://rational-online.com/en_gb/news/rational-announce-expert-chef-demonstrations.php" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:.82rem;padding:8px 16px;display:inline-block;">View Details →</a>
+        </div>
+      </div>
+
+      <!-- GLASGOW -->
+      <div class="prev-event-card reveal reveal-d2">
+        <div class="prev-event-img">
+          <img src="assets/images/demos.jpg" alt="Glasgow Asian Cuisine Expert Chef demonstration" loading="lazy">
+          <div class="prev-event-indicators">
+            <span class="prev-event-indicator"><i class="fa-solid fa-images"></i> Photos</span>
+            <span class="prev-event-indicator"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</span>
+          </div>
+        </div>
+        <div class="prev-event-body">
+          <div class="prev-event-location">Glasgow, UK</div>
+          <h3>Asian Cuisine Expert Chef Demonstration</h3>
+          <div class="prev-event-date">20 May 2025</div>
+          <p>Rehan demonstrated how the RATIONAL iVario Pro can modernise Asian cooking by combining speed, consistency and advanced techniques while maintaining authentic flavour.</p>
+          <a href="contact.html" class="btn btn-ghost" style="font-size:.82rem;padding:8px 16px;display:inline-block;">Book Next Event →</a>
+        </div>
+      </div>
+
+      <!-- MANCHESTER -->
+      <div class="prev-event-card reveal">
+        <div class="prev-event-img">
+          <img src="assets/images/Manchester.jpg" alt="Manchester iVario Pro CorpAcq Stadium" loading="lazy">
+          <div class="prev-event-indicators">
+            <span class="prev-event-indicator"><i class="fa-solid fa-images"></i> Photos</span>
+            <span class="prev-event-indicator"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</span>
+          </div>
+        </div>
+        <div class="prev-event-body">
+          <div class="prev-event-location">Manchester, UK</div>
+          <h3>iVario Pro Live — CorpAcq Stadium</h3>
+          <div class="prev-event-date">9 June 2025</div>
+          <p>A live iVario Pro experience at CorpAcq Stadium showcasing authentic Indian flavours — Chicken Curry, Paneer Karahi and Hyderabadi Lamb Chops on the menu.</p>
+          <a href="https://www.linkedin.com/posts/rehan-uddin-817406135_hospitality-restaurantowner-commercialkitchen-activity-7471960622478368768-9Sky?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEx6Cn8BiGY8B49yun8m14FtFwim_oFABX4" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:.82rem;padding:8px 16px;display:inline-block;">View on LinkedIn →</a>
+        </div>
+      </div>
+
+      <!-- LUTON PREVIOUS -->
+      <div class="prev-event-card reveal reveal-d1">
+        <div class="prev-event-img">
+          <img src="assets/images/Luton.jpg" alt="Luton Asian Event Catering Showcase" loading="lazy">
+          <div class="prev-event-indicators">
+            <span class="prev-event-indicator"><i class="fa-solid fa-images"></i> Photos</span>
+            <span class="prev-event-indicator"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</span>
+          </div>
+        </div>
+        <div class="prev-event-body">
+          <div class="prev-event-location">Luton, UK</div>
+          <h3>Asian Event Catering Showcase</h3>
+          <div class="prev-event-date">2 September 2025</div>
+          <p>An immersive Asian event-catering showcase demonstrating how the RATIONAL iVario Pro and iCombi Pro can reduce cooking times and improve consistency at scale.</p>
+          <a href="contact.html" class="btn btn-ghost" style="font-size:.82rem;padding:8px 16px;display:inline-block;">Book Next Event →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQs ── -->
+<section class="block">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Common Questions</span>
+      <h2>FAQs</h2>
+      <span class="arc"><svg viewBox="0 0 64 14"><path d="M2 12 Q32 -6 62 12" stroke="#b4873a" stroke-width="2" fill="none"/></svg></span>
+    </div>
+
+    <div class="faq-categories reveal">
+      <button class="faq-cat-btn active" onclick="filterFaq('all',this)">All</button>
+      <button class="faq-cat-btn" onclick="filterFaq('consultancy',this)">Consultancy</button>
+      <button class="faq-cat-btn" onclick="filterFaq('demonstrations',this)">Demonstrations</button>
+      <button class="faq-cat-btn" onclick="filterFaq('aron',this)">ARON</button>
+      <button class="faq-cat-btn" onclick="filterFaq('energy',this)">Energy</button>
+    </div>
+
+    <div class="faq-list reveal">
+
+      <!-- CONSULTANCY -->
+      <div class="faq-item" data-cat="consultancy">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What does Rehan's consultancy actually involve?
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Rehan works directly with restaurant owners and hospitality operators to improve their kitchen systems, operations, leadership and profitability. This means reviewing your current setup, identifying where time and money are being lost, and rebuilding the processes that hold your business back — whether that is one site or multiple locations.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="consultancy">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How long does a consultancy engagement take?
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">It depends on the size and complexity of your business. Some operators see meaningful results from a single intensive session. Others work with Rehan over several weeks to implement systems, train teams and measure results. The focus is always on practical, lasting improvement — not a one-size-fits-all report.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="consultancy">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What types of businesses does Rehan work with?
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Rehan works with independent restaurants, multi-site hospitality groups, catering operations and Asian cuisine specialists across the UK. Whether you run one site or several, the principles of better systems, better teams and better profit apply the same way.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="consultancy">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I get started with consultancy?
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Use the contact form on this site or send a WhatsApp message directly to Rehan at +44 7795 161230. Describe your business and the main challenges you are facing. Rehan replies personally to all enquiries and will suggest the most appropriate next step.</div>
+        </div>
+      </div>
+
+      <!-- DEMONSTRATIONS -->
+      <div class="faq-item" data-cat="demonstrations">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What happens at a live kitchen demonstration?
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Rehan cooks real dishes — including yours if you bring them — using modern RATIONAL kitchen systems. You see the difference in cooking time, consistency, yield and labour cost first-hand. The session includes a practical Q&amp;A where you can ask specific questions about your own kitchen and menu.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="demonstrations">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I bring my own dishes to a demonstration?
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes — and we encourage it. Seeing your own dishes cooked using modern systems makes the results immediately relevant to your operation. Get in touch before the event to let us know what you would like to bring.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="demonstrations">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Who should attend a live demonstration?
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">The sessions are designed for restaurant owners, head chefs, catering managers and hospitality operators who are looking to improve kitchen efficiency, reduce labour costs and maintain consistency across service. Both independent operators and multi-site groups attend.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="demonstrations">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Where do demonstrations take place?
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Events have taken place in Wolverhampton, Salford, Glasgow, Manchester and Luton. Upcoming events include Luton on 16th September and Dublin on 6th October 2025. New locations are added regularly — register your interest to be notified about events near you.</div>
+        </div>
+      </div>
+
+      <!-- ARON -->
+      <div class="faq-item" data-cat="aron">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What is ARON and who is it for?
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">ARON — the Asian Restaurant Owners Network — is a community bringing together restaurant owners to share knowledge, solve problems and improve their businesses. It is for anyone running an Asian hospitality business who wants to connect with other operators, access practical resources and build a stronger, more profitable operation.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="aron">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I join the ARON community?
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Join the ARON Facebook group — currently 2,900+ members — or get in touch via the contact page to find out more about membership and how ARON can support your business.</div>
+        </div>
+      </div>
+
+      <!-- ENERGY -->
+      <div class="faq-item" data-cat="energy">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What is ARON Energy?
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">ARON Energy connects hospitality businesses with specialist utility support through Consultiv Utilities. Complete a short form and receive a free, no-obligation review of your energy usage and contract. Where suitable, businesses may benefit from collective purchasing alongside other ARON operators.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="energy">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is the energy review really free?
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes. The initial review through ARON Energy is completely free and carries no obligation. You receive a review based on your business, energy usage and current contract. You are under no pressure to switch or take any action — but many operators find significant savings once they see the comparison.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:32px;text-align:center;" class="reveal">
+      <p style="color:var(--ink-soft);margin-bottom:16px;">Still have a question?</p>
+      <a href="contact.html" class="btn btn-solid">Ask Rehan Directly →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ── -->
 <section class="cta-banner">
   <h2 class="reveal">Be part of an episode</h2>
   <p class="reveal reveal-d1">Got a story or a question worth asking? Get in touch.</p>
   <div class="reveal reveal-d2"><a href="contact.html" class="btn btn-solid">Get In Touch</a></div>
 </section>
 
-<!-- ============================================================
-     FOOTER — same footer block goes on every page
-     (index.html, about.html, consultancy.html, aron.html,
-     insight.html, energy.html, live-demonstrations.html, contact.html)
-     ============================================================ -->
-
+<!-- ── FOOTER ── -->
 <footer class="site-footer">
   <div class="wrap foot-grid">
-
     <div class="foot-brand">
       <div class="foot-brand-top">
         <img class="foot-logo" src="assets/images/aron-logo-full.png" alt="ARON — Asian Restaurant Owners Network">
       </div>
       <div class="foot-social">
-  <a class="social-linkedin" href="https://www.linkedin.com/in/rehan-uddin-817406135/" aria-label="ARON on LinkedIn" target="_blank" rel="noopener">
-    <i class="fa-brands fa-linkedin-in"></i>
-  </a>
-  <a class="social-facebook" href="https://www.facebook.com/groups/planetaron" aria-label="Join ARON on Facebook" target="_blank" rel="noopener" style="background:#1877F2;">
-  <i class="fa-brands fa-facebook-f" style="color:white;"></i>
-</a>
-  <a class="social-whatsapp" href="https://wa.me/447795161230" aria-label="Message ARON on WhatsApp" target="_blank" rel="noopener">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-  <a class="social-instagram" href="https://www.instagram.com/planet_aron/" aria-label="ARON on Instagram" target="_blank" rel="noopener">
-    <i class="fa-brands fa-instagram"></i>
-  </a>
-</div>
-<p style="font-size:11px; color:#b4873a; font-weight:600; margin-top:6px;">
-  📘 Join 2.9k members on Facebook
-</p>
+        <a class="social-linkedin" href="https://www.linkedin.com/in/rehan-uddin-817406135/" aria-label="ARON on LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a class="social-facebook" href="https://www.facebook.com/groups/planetaron" aria-label="Join ARON on Facebook" target="_blank" rel="noopener" style="background:#1877F2;"><i class="fa-brands fa-facebook-f" style="color:white;"></i></a>
+        <a class="social-whatsapp" href="https://wa.me/447795161230" aria-label="Message ARON on WhatsApp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+        <a class="social-instagram" href="https://www.instagram.com/planet_aron/" aria-label="ARON on Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <p style="font-size:11px;color:#b4873a;font-weight:600;margin-top:6px;">📘 Join 2.9k members on Facebook</p>
       <p>Better systems. Better teams. Better profit. Helping hospitality businesses grow with confidence.</p>
     </div>
-
     <div class="foot-explore">
       <span class="eyebrow">Explore</span>
       <a href="about.html">About Rehan</a>
@@ -132,15 +427,12 @@
       <a href="https://consultivutilities.com/" target="_blank" rel="noopener">ARON Energy</a>
       <a href="live-demonstrations.html">Live Demonstrations</a>
     </div>
-
     <div class="foot-contact">
       <span class="eyebrow">Get In Touch</span>
       <p>Tell us about your business and we'll come back with practical next steps.</p>
       <a href="contact.html" class="btn btn-ghost">Contact</a>
     </div>
-
   </div>
-
   <div class="foot-bottom">
     &copy; <span id="yr">2026</span> Asian Restaurant Owners Network. All rights reserved.
   </div>
@@ -148,5 +440,30 @@
 
 <script src="assets/js/main.js"></script>
 <script src="assets/js/chatbot.js"></script>
+<script>
+// ── FAQ Toggle ──
+function toggleFaq(btn) {
+  var item = btn.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el) {
+    el.classList.remove('open');
+  });
+  if (!isOpen) item.classList.add('open');
+}
+
+// ── FAQ Filter ──
+function filterFaq(cat, btn) {
+  document.querySelectorAll('.faq-cat-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+      item.classList.remove('open');
+    }
+  });
+}
+</script>
 </body>
 </html>

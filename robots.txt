@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aron-hospitality.com/sitemap.xml

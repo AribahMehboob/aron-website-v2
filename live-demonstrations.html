@@ -34,10 +34,81 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css?v=2.0">
 
 
   <style>
+
+    /* ── Nav Seat Button & WhatsApp Float ── */
+     .nav-seat-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(145deg, #1a1a1a, #262525) !important;
+  color: #ffffff !important;
+  padding: 10px 22px !important;
+  font-family: "Public Sans", sans-serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  text-decoration: none !important;
+  border-radius: 999px !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 16px rgba(180, 135, 58, 0.35) !important;
+  animation: secureSeatPulse 2.4s ease-in-out infinite,
+             goldBlink 1s ease-in-out infinite !important;
+}
+
+.nav-seat-btn:hover {
+  background: linear-gradient(145deg, #d8a348, #b88634) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(180, 135, 58, 0.5) !important;
+  text-decoration: none !important;
+  animation: none !important;
+}
+
+@keyframes secureSeatPulse {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(180, 135, 58, 0.35);
+  }
+  50% {
+    box-shadow: 0 4px 24px rgba(180, 135, 58, 0.7),
+                0 0 0 5px rgba(180, 135, 58, 0.18);
+  }
+}
+
+@keyframes goldBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.15; }
+}
+    .whatsapp-float {
+      position: fixed !important;
+      right: 22px !important;
+      bottom: 94px !important;
+      width: 56px !important;
+      height: 56px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: #25D366 !important;
+      color: #ffffff !important;
+      border-radius: 50% !important;
+      font-size: 28px !important;
+      text-decoration: none !important;
+      z-index: 299 !important;
+      box-shadow: 0 8px 22px rgba(37, 211, 102, 0.38) !important;
+      transition: transform 0.25s ease, box-shadow 0.25s !important;
+    }
+
+    .whatsapp-float:hover {
+      color: #ffffff !important;
+      transform: translateY(-3px) scale(1.06) !important;
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.52) !important;
+      text-decoration: none !important;
+    }
 
     /* ── Event Cards ── */
 
@@ -520,16 +591,55 @@
       flex-wrap: wrap;
     }
 
+    .centered-section {
+      text-align: center !important;
+      align-items: center !important;
+    }
+
+    .centered-section .arc {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
 
     /* ── Responsive ── */
 
     @media (max-width: 980px) {
+      nav {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+      .nav-seat-btn {
+        display: inline-flex !important;
+        padding: 7px 14px !important;
+        font-size: 0.72rem !important;
+        letter-spacing: 0.04em !important;
+        margin-left: auto !important;
+        margin-right: 12px !important;
+      }
+      .burger {
+        margin-left: 0 !important;
+      }
       .experience-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 640px) {
+      .chat-fab {
+        width: 48px !important;
+        height: 48px !important;
+        right: 16px !important;
+        bottom: 16px !important;
+      }
+      .whatsapp-float {
+        width: 48px !important;
+        height: 48px !important;
+        right: 16px !important;
+        bottom: 74px !important;
+        font-size: 24px !important;
+      }
 
       .experience-grid {
         grid-template-columns: 1fr;
@@ -546,12 +656,31 @@
 
     }
 
+    @media (max-width: 480px) {
+      .nav-seat-btn {
+        padding: 6px 10px !important;
+        font-size: 0.65rem !important;
+        letter-spacing: 0.03em !important;
+        margin-right: 8px !important;
+      }
+    }
+
   </style>
 
 </head>
 
 
 <body>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/447795161230" 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat with ARON on WhatsApp" 
+     title="Chat with ARON on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
 
   <!-- INTRO -->
@@ -616,33 +745,16 @@
 
         <a href="live-demonstrations.html"
            class="active">
-
           Demonstrations
-
-          <span
-            style="
-              display:inline-block;
-              background:#b4873a;
-              color:white;
-              font-size:9px;
-              font-weight:700;
-              padding:2px 7px;
-              border-radius:10px;
-              margin-left:5px;
-              vertical-align:middle;
-              letter-spacing:0.03em;
-            ">
-            Secure Your Seat
-          </span>
-
         </a>
 
       </div>
 
 
-      <a href="contact.html"
-         class="nav-cta">
-        Contact
+      <a href="live-demonstrations.html"
+         class="nav-seat-btn"
+         aria-label="Secure your seat at a live demonstration">
+        Secure Your Seats
       </a>
 
 
@@ -733,12 +845,6 @@
         Live Kitchen Demonstrations
       </h1>
 
-      <!-- <p class="lead reveal reveal-d1">
-        See it. Learn it. Apply it. Watch how modern kitchen
-        systems improve efficiency, consistency and profitability
-        — with your own dishes on the day.
-      </p> -->
-
     </div>
 
   </section>
@@ -752,40 +858,28 @@
 
     <div class="wrap">
 
-<div class="section-head reveal centered-section">
+      <div class="section-head reveal centered-section">
 
-  <span class="eyebrow">
-    Upcoming Events
-  </span>
+        <span class="eyebrow">
+          Upcoming Events
+        </span>
 
-  <h2>
-    Where we are next
-  </h2>
+        <h2>
+          Where we are next
+        </h2>
 
-  <span class="arc">
-    <svg viewBox="0 0 64 14">
-      <path
-        d="M2 12 Q32 -6 62 12"
-        stroke="#b4873a"
-        stroke-width="2"
-        fill="none"
-      />
-    </svg>
-  </span>
+        <span class="arc">
+          <svg viewBox="0 0 64 14">
+            <path
+              d="M2 12 Q32 -6 62 12"
+              stroke="#b4873a"
+              stroke-width="2"
+              fill="none"
+            />
+          </svg>
+        </span>
 
-</div>
-
-<style>
-.centered-section {
-  text-align: center !important;
-  align-items: center !important;
-}
-
-.centered-section .arc {
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
+      </div>
 
 
       <div class="event-grid">
@@ -840,11 +934,11 @@
               </div>
 
               <ul>
-  <li>Chicken Curry &amp; Paneer Karahi</li>
-  <li>Tandoori Wings &amp; Hyderabadi Lamb Chops</li>
-  <li>Peas Pilau &amp; Moong Dal</li>
-  <li>High-volume cooking with RATIONAL systems</li>
-</ul>
+                <li>Chicken Curry &amp; Paneer Karahi</li>
+                <li>Tandoori Wings &amp; Hyderabadi Lamb Chops</li>
+                <li>Peas Pilau &amp; Moong Dal</li>
+                <li>High-volume cooking with RATIONAL systems</li>
+              </ul>
 
             </div>
 
@@ -1019,386 +1113,384 @@
 
   <!-- =====================================================
        2. PREVIOUS EVENTS
-<!-- ══════════════════════════════════════════════
-     2. PREVIOUS EVENTS
-══════════════════════════════════════════════ -->
+  ====================================================== -->
 
-<section class="block alt">
-  <div class="wrap">
+  <section class="block alt">
+    <div class="wrap">
 
-    <div class="section-head reveal">
+      <div class="section-head reveal">
 
-      <span class="eyebrow">
-        Previous Events
-      </span>
+        <span class="eyebrow">
+          Previous Events
+        </span>
 
-      <h2>
-        See what we've been doing
-      </h2>
+        <h2>
+          See what we've been doing
+        </h2>
 
-      <span class="arc">
-        <svg viewBox="0 0 64 14">
-          <path
-            d="M2 12 Q32 -6 62 12"
-            stroke="#b4873a"
-            stroke-width="2"
-            fill="none"/>
-        </svg>
-      </span>
+        <span class="arc">
+          <svg viewBox="0 0 64 14">
+            <path
+              d="M2 12 Q32 -6 62 12"
+              stroke="#b4873a"
+              stroke-width="2"
+              fill="none"/>
+          </svg>
+        </span>
+
+      </div>
+
+
+      <div class="prev-events-grid">
+
+
+        <!-- PREVIOUS EVENT 1 — WOLVERHAMPTON -->
+
+        <div
+          class="prev-event-card reveal"
+          onclick="openModal('modal-wolverhampton')"
+          style="cursor:pointer;">
+
+          <div class="prev-event-img">
+
+            <img
+              src="assets/images/Wolverhampton.jpg"
+              alt="Asian Expert Chef live demonstration in Wolverhampton"
+              loading="lazy">
+
+            <div class="prev-event-indicators">
+
+              <span class="prev-event-indicator">
+                <i class="fa-solid fa-images"></i>
+                Photos
+              </span>
+
+              <span class="prev-event-indicator">
+                <i class="fa-brands fa-linkedin-in"></i>
+                LinkedIn
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="prev-event-body">
+
+            <div class="prev-event-location">
+              Wolverhampton, UK
+            </div>
+
+            <h3>
+              Asian Expert Chef — Live Demonstration
+            </h3>
+
+            <div class="prev-event-date">
+              2025
+            </div>
+
+            <p>
+              A high-energy Asian Expert Chef session showcasing
+              the RATIONAL iVario Pro and iCombi Pro. Rehan
+              demonstrated bespoke cooking settings for Asian
+              dishes, improving consistency, yield, speed and
+              kitchen efficiency without compromising authentic
+              flavour.
+            </p>
+
+            <a
+              class="btn btn-ghost"
+              style="font-size:0.8rem;padding:8px 16px;">
+
+              View Event →
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PREVIOUS EVENT 2 — SALFORD -->
+
+        <div
+          class="prev-event-card reveal reveal-d1"
+          onclick="openModal('modal-salford')"
+          style="cursor:pointer;">
+
+          <div class="prev-event-img">
+
+            <img
+              src="assets/images/Salford.jpg"
+              alt="Asian cuisine demonstration in Salford"
+              loading="lazy">
+
+            <div class="prev-event-indicators">
+
+              <span class="prev-event-indicator">
+                <i class="fa-solid fa-images"></i>
+                Photos
+              </span>
+
+              <span class="prev-event-indicator">
+                <i class="fa-brands fa-linkedin-in"></i>
+                LinkedIn
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="prev-event-body">
+
+            <div class="prev-event-location">
+              Salford, UK
+            </div>
+
+            <h3>
+              Asian Cuisine Expert Chef Demonstration
+            </h3>
+
+            <div class="prev-event-date">
+              29 April 2025
+            </div>
+
+            <p>
+              An expert Asian cuisine demonstration focused on
+              the RATIONAL iVario Pro, showcasing faster
+              production, consistent results and authentic Asian
+              flavours through advanced cooking technology.
+            </p>
+
+            <a
+              href="https://www.rational-online.com/en_gb/news/rational-announce-expert-chef-demonstrations.php"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+              style="font-size:0.8rem;padding:8px 16px;">
+
+              Event Details →
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PREVIOUS EVENT 3 — GLASGOW -->
+
+        <div
+          class="prev-event-card reveal"
+          onclick="openModal('modal-glasgow')"
+          style="cursor:pointer;">
+
+          <div class="prev-event-img">
+
+            <img
+              src="assets/images/energy.jpg"
+              alt="Asian cuisine chef demonstration in Glasgow"
+              loading="lazy">
+
+            <div class="prev-event-indicators">
+
+              <span class="prev-event-indicator">
+                <i class="fa-solid fa-images"></i>
+                Photos
+              </span>
+
+              <span class="prev-event-indicator">
+                <i class="fa-brands fa-linkedin-in"></i>
+                LinkedIn
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="prev-event-body">
+
+            <div class="prev-event-location">
+              Glasgow, UK
+            </div>
+
+            <h3>
+              Asian Cuisine Expert Chef Demonstration
+            </h3>
+
+            <div class="prev-event-date">
+              20 May 2025
+            </div>
+
+            <p>
+              Rehan demonstrated how the RATIONAL iVario Pro can
+              modernise Asian cooking by combining speed,
+              consistency and advanced cooking techniques while
+              maintaining the flavour and quality of traditional
+              dishes.
+            </p>
+
+            <a
+              href="https://www.rational-online.com/en_gb/news/rational-announce-expert-chef-demonstrations.php"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+              style="font-size:0.8rem;padding:8px 16px;">
+
+              Event Details →
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PREVIOUS EVENT 4 — MANCHESTER -->
+
+        <div
+          class="prev-event-card reveal reveal-d1"
+          onclick="openModal('modal-manchester')"
+          style="cursor:pointer;">
+
+          <div class="prev-event-img">
+
+            <img
+              src="assets/images/Manchester.jpg"
+              alt="RATIONAL iVario Pro live demonstration in Manchester"
+              loading="lazy">
+
+            <div class="prev-event-indicators">
+
+              <span class="prev-event-indicator">
+                <i class="fa-solid fa-images"></i>
+                Photos
+              </span>
+
+              <span class="prev-event-indicator">
+                <i class="fa-brands fa-linkedin-in"></i>
+                LinkedIn
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="prev-event-body">
+
+            <div class="prev-event-location">
+              Manchester, UK
+            </div>
+
+            <h3>
+              iVario Pro Live — CorpAcq Stadium
+            </h3>
+
+            <div class="prev-event-date">
+              9 June 2025
+            </div>
+
+            <p>
+              A live iVario Pro experience showcasing how modern
+              cooking technology can deliver authentic Indian
+              flavours faster and more efficiently, with Chicken
+              Curry, Paneer Karahi and Hyderabadi Lamb Chops
+              on the menu.
+            </p>
+
+            <a
+              class="btn btn-ghost"
+              style="font-size:0.8rem;padding:8px 16px;">
+
+              View Event →
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PREVIOUS EVENT 5 — LUTON -->
+
+        <div
+          class="prev-event-card reveal"
+          onclick="openModal('modal-luton')"
+          style="cursor:pointer;">
+
+          <div class="prev-event-img">
+
+            <img
+              src="assets/images/Luton.jpg"
+              alt="Asian event catering demonstration in Luton"
+              loading="lazy">
+
+            <div class="prev-event-indicators">
+
+              <span class="prev-event-indicator">
+                <i class="fa-solid fa-images"></i>
+                Photos
+              </span>
+
+              <span class="prev-event-indicator">
+                <i class="fa-brands fa-linkedin-in"></i>
+                LinkedIn
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="prev-event-body">
+
+            <div class="prev-event-location">
+              Luton, UK
+            </div>
+
+            <h3>
+              Asian Event Catering Showcase
+            </h3>
+
+            <div class="prev-event-date">
+              2 September 2025
+            </div>
+
+            <p>
+              An immersive Asian event-catering showcase
+              demonstrating how the RATIONAL iVario Pro and
+              iCombi Pro can reduce cooking times, improve
+              consistency and streamline production for
+              restaurants and large-scale catering.
+            </p>
+
+            <a
+              href="https://fcsi.org.uk/2025/08/discover-the-future-of-asian-event-catering-with-live-chef-demonstrations/?utm_source=chatgpt.com"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+              style="font-size:0.8rem;padding:8px 16px;">
+
+              Event Details →
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
 
     </div>
-
-
-    <div class="prev-events-grid">
-
-
-      <!-- PREVIOUS EVENT 1 — WOLVERHAMPTON -->
-
-      <div
-        class="prev-event-card reveal"
-        onclick="openModal('modal-wolverhampton')"
-        style="cursor:pointer;">
-
-        <div class="prev-event-img">
-
-          <img
-            src="assets/images/Wolverhampton.jpg"
-            alt="Asian Expert Chef live demonstration in Wolverhampton"
-            loading="lazy">
-
-          <div class="prev-event-indicators">
-
-            <span class="prev-event-indicator">
-              <i class="fa-solid fa-images"></i>
-              Photos
-            </span>
-
-            <span class="prev-event-indicator">
-              <i class="fa-brands fa-linkedin-in"></i>
-              LinkedIn
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="prev-event-body">
-
-          <div class="prev-event-location">
-            Wolverhampton, UK
-          </div>
-
-          <h3>
-            Asian Expert Chef — Live Demonstration
-          </h3>
-
-          <div class="prev-event-date">
-            2025
-          </div>
-
-          <p>
-            A high-energy Asian Expert Chef session showcasing
-            the RATIONAL iVario Pro and iCombi Pro. Rehan
-            demonstrated bespoke cooking settings for Asian
-            dishes, improving consistency, yield, speed and
-            kitchen efficiency without compromising authentic
-            flavour.
-          </p>
-
-          <a
-            class="btn btn-ghost"
-            style="font-size:0.8rem;padding:8px 16px;">
-
-            View Event →
-
-          </a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- PREVIOUS EVENT 2 — SALFORD -->
-
-      <div
-        class="prev-event-card reveal reveal-d1"
-        onclick="openModal('modal-salford')"
-        style="cursor:pointer;">
-
-        <div class="prev-event-img">
-
-          <img
-            src="assets/images/Salford.jpg"
-            alt="Asian cuisine demonstration in Salford"
-            loading="lazy">
-
-          <div class="prev-event-indicators">
-
-            <span class="prev-event-indicator">
-              <i class="fa-solid fa-images"></i>
-              Photos
-            </span>
-
-            <span class="prev-event-indicator">
-              <i class="fa-brands fa-linkedin-in"></i>
-              LinkedIn
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="prev-event-body">
-
-          <div class="prev-event-location">
-            Salford, UK
-          </div>
-
-          <h3>
-            Asian Cuisine Expert Chef Demonstration
-          </h3>
-
-          <div class="prev-event-date">
-            29 April 2025
-          </div>
-
-          <p>
-            An expert Asian cuisine demonstration focused on
-            the RATIONAL iVario Pro, showcasing faster
-            production, consistent results and authentic Asian
-            flavours through advanced cooking technology.
-          </p>
-
-          <a
-  href="https://www.rational-online.com/en_gb/news/rational-announce-expert-chef-demonstrations.php"
-  target="_blank"
-  rel="noopener"
-  class="btn btn-ghost"
-  style="font-size:0.8rem;padding:8px 16px;">
-
-  Event Details →
-
-</a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- PREVIOUS EVENT 3 — GLASGOW -->
-
-      <div
-        class="prev-event-card reveal"
-        onclick="openModal('modal-glasgow')"
-        style="cursor:pointer;">
-
-        <div class="prev-event-img">
-
-          <img
-            src="assets/images/energy.jpg"
-            alt="Asian cuisine chef demonstration in Glasgow"
-            loading="lazy">
-
-          <div class="prev-event-indicators">
-
-            <span class="prev-event-indicator">
-              <i class="fa-solid fa-images"></i>
-              Photos
-            </span>
-
-            <span class="prev-event-indicator">
-              <i class="fa-brands fa-linkedin-in"></i>
-              LinkedIn
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="prev-event-body">
-
-          <div class="prev-event-location">
-            Glasgow, UK
-          </div>
-
-          <h3>
-            Asian Cuisine Expert Chef Demonstration
-          </h3>
-
-          <div class="prev-event-date">
-            20 May 2025
-          </div>
-
-          <p>
-            Rehan demonstrated how the RATIONAL iVario Pro can
-            modernise Asian cooking by combining speed,
-            consistency and advanced cooking techniques while
-            maintaining the flavour and quality of traditional
-            dishes.
-          </p>
-
-          <a
-  href="https://www.rational-online.com/en_gb/news/rational-announce-expert-chef-demonstrations.php"
-  target="_blank"
-  rel="noopener"
-  class="btn btn-ghost"
-  style="font-size:0.8rem;padding:8px 16px;">
-
-  Event Details →
-
-</a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- PREVIOUS EVENT 4 — MANCHESTER -->
-
-      <div
-        class="prev-event-card reveal reveal-d1"
-        onclick="openModal('modal-manchester')"
-        style="cursor:pointer;">
-
-        <div class="prev-event-img">
-
-          <img
-            src="assets/images/Manchester.jpg"
-            alt="RATIONAL iVario Pro live demonstration in Manchester"
-            loading="lazy">
-
-          <div class="prev-event-indicators">
-
-            <span class="prev-event-indicator">
-              <i class="fa-solid fa-images"></i>
-              Photos
-            </span>
-
-            <span class="prev-event-indicator">
-              <i class="fa-brands fa-linkedin-in"></i>
-              LinkedIn
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="prev-event-body">
-
-          <div class="prev-event-location">
-            Manchester, UK
-          </div>
-
-          <h3>
-            iVario Pro Live — CorpAcq Stadium
-          </h3>
-
-          <div class="prev-event-date">
-            9 June 2025
-          </div>
-
-          <p>
-            A live iVario Pro experience showcasing how modern
-            cooking technology can deliver authentic Indian
-            flavours faster and more efficiently, with Chicken
-            Curry, Paneer Karahi and Hyderabadi Lamb Chops
-            on the menu.
-          </p>
-
-          <a
-            class="btn btn-ghost"
-            style="font-size:0.8rem;padding:8px 16px;">
-
-            View Event →
-
-          </a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- PREVIOUS EVENT 5 — LUTON -->
-
-      <div
-        class="prev-event-card reveal"
-        onclick="openModal('modal-luton')"
-        style="cursor:pointer;">
-
-        <div class="prev-event-img">
-
-          <img
-            src="assets/images/Luton.jpg"
-            alt="Asian event catering demonstration in Luton"
-            loading="lazy">
-
-          <div class="prev-event-indicators">
-
-            <span class="prev-event-indicator">
-              <i class="fa-solid fa-images"></i>
-              Photos
-            </span>
-
-            <span class="prev-event-indicator">
-              <i class="fa-brands fa-linkedin-in"></i>
-              LinkedIn
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="prev-event-body">
-
-          <div class="prev-event-location">
-            Luton, UK
-          </div>
-
-          <h3>
-            Asian Event Catering Showcase
-          </h3>
-
-          <div class="prev-event-date">
-            2 September 2025
-          </div>
-
-          <p>
-            An immersive Asian event-catering showcase
-            demonstrating how the RATIONAL iVario Pro and
-            iCombi Pro can reduce cooking times, improve
-            consistency and streamline production for
-            restaurants and large-scale catering.
-          </p>
-
-          <a
-  href="https://fcsi.org.uk/2025/08/discover-the-future-of-asian-event-catering-with-live-chef-demonstrations/?utm_source=chatgpt.com"
-  target="_blank"
-  rel="noopener"
-  class="btn btn-ghost"
-  style="font-size:0.8rem;padding:8px 16px;">
-
-  Event Details →
-
-</a>
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </div>
-</section>
+  </section>
 
 
   <!-- =====================================================
@@ -2010,7 +2102,7 @@
         href="contact.html?event=Luton"
         class="btn btn-solid">
 
-        Book Your Seat for  Luton 
+        Book Your Seat for Luton 
 
       </a>
 

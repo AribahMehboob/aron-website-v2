@@ -59,6 +59,8 @@ async def add_security_headers(request: Request, call_next):
 
 # ── Serve static files ────────────────────────────────────────────────────────
 app.mount("/assets", StaticFiles(directory="assets"), name="assets")
+if os.path.exists("components"):
+    app.mount("/components", StaticFiles(directory="components"), name="components")
 
 # ── ARON Knowledge Base ───────────────────────────────────────────────────────
 # NOTE: Add Rehan's proprietary recipes and methods here for ARON Premium content.
@@ -514,7 +516,7 @@ async def chat(request: Request, req: ChatRequest):
 
     try:
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="openai/gpt-oss-120b",
             messages=api_messages,
             temperature=0.3,
             max_tokens=300,

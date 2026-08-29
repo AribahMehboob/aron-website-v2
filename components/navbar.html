@@ -1,0 +1,256 @@
+<style>
+  /* NAVBAR STYLES */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 300;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e5e5e5;
+  }
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .logo {
+    display: block;
+    width: 80px;
+    flex-shrink: 0;
+  }
+  .navlinks {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  .navlinks a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    position: relative;
+    transition: color 0.3s;
+    text-decoration: none;
+  }
+  .navlinks a:hover,
+  .navlinks a.active {
+    color: #b4873a;
+  }
+  .navlinks a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #b4873a;
+  }
+  .nav-seat-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #1a1a1a, #262525);
+    color: #ffffff;
+    padding: 10px 22px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: 999px;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(180, 135, 58, 0.35);
+    animation: secureSeatPulse 2.4s ease-in-out infinite, goldBlink 1s ease-in-out infinite;
+    text-decoration: none;
+  }
+  .nav-seat-btn:hover {
+    background: linear-gradient(145deg, #d8a348, #b88634);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(180, 135, 58, 0.5);
+    animation: none;
+  }
+  @keyframes secureSeatPulse {
+    0%, 100% { box-shadow: 0 4px 16px rgba(180, 135, 58, 0.35); }
+    50% { box-shadow: 0 4px 24px rgba(180, 135, 58, 0.7), 0 0 0 5px rgba(180, 135, 58, 0.18); }
+  }
+  @keyframes goldBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.15; }
+  }
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .burger span {
+    width: 26px;
+    height: 3px;
+    background: #1a1a1a;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    z-index: 400;
+    padding: 2rem;
+    transition: right 0.4s ease;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+  }
+  .mobile-drawer.open {
+    right: 0;
+  }
+  .drawer-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #1a1a1a;
+  }
+  .drawer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .drawer-nav a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+  .drawer-nav a.active {
+    color: #b4873a;
+  }
+  .drawer-cta {
+    margin-top: 1rem;
+    padding: 12px 24px;
+    background: #b4873a;
+    color: #fff;
+    border-radius: 999px;
+    text-align: center;
+  }
+  .drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 350;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+  .drawer-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  @media (max-width: 980px) {
+    .navlinks { display: none; }
+    .burger { display: flex; }
+    .nav-seat-btn {
+      padding: 7px 14px;
+      font-size: 0.72rem;
+      margin-left: auto;
+      margin-right: 12px;
+    }
+  }
+  @media (max-width: 480px) {
+    .nav-seat-btn {
+      padding: 6px 10px;
+      font-size: 0.65rem;
+      margin-right: 8px;
+    }
+  }
+</style>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo" aria-label="ARON home">
+      <img src="assets/images/aron-logo.png" alt="ARON">
+    </a>
+
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Rehan</a>
+      <a href="consultancy.html">Consultancy</a>
+      <a href="aron.html">ARON</a>
+      <a href="insight.html">Insight</a>
+      <a href="https://consultivutilities.com/" target="_blank" rel="noopener noreferrer">Energy</a>
+      <a href="live-demonstrations.html">Demonstrations</a>
+    </div>
+
+    <a href="live-demonstrations.html" class="nav-seat-btn" aria-label="Secure your seat">
+      Secure Your Seats
+    </a>
+
+    <button class="burger" id="burger" aria-label="Open menu" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<div class="mobile-drawer" id="drawer">
+  <button class="drawer-close" id="drawerClose" aria-label="Close menu" type="button">✕</button>
+  <nav class="drawer-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Rehan</a>
+    <a href="consultancy.html">Consultancy</a>
+    <a href="aron.html">ARON</a>
+    <a href="insight.html">ARON Insight</a>
+    <a href="https://consultivutilities.com/" target="_blank" rel="noopener noreferrer">ARON Energy</a>
+    <a href="live-demonstrations.html">Live Demonstrations</a>
+    <a href="contact.html" class="drawer-cta">Contact</a>
+  </nav>
+</div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<script>
+  const burger = document.getElementById('burger');
+  const drawer = document.getElementById('drawer');
+  const drawerClose = document.getElementById('drawerClose');
+  const drawerOverlay = document.getElementById('drawerOverlay');
+
+  burger.addEventListener('click', () => {
+    drawer.classList.add('open');
+    drawerOverlay.classList.add('active');
+  });
+
+  drawerClose.addEventListener('click', () => {
+    drawer.classList.remove('open');
+    drawerOverlay.classList.remove('active');
+  });
+
+  drawerOverlay.addEventListener('click', () => {
+    drawer.classList.remove('open');
+    drawerOverlay.classList.remove('active');
+  });
+
+  // Auto-highlight active page
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.navlinks a, .drawer-nav a').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+</script>
