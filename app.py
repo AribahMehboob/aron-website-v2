@@ -2,7 +2,7 @@ import os
 import logging
 from dotenv import load_dotenv
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, FileResponse
+from fastapi.responses import HTMLResponse, FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from groq import Groq
@@ -14,16 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
-from fastapi.responses import JSONResponse
-from flask import send_from_directory
 
-@app.route('/sitemap.xml')
-def sitemap():
-    return send_from_directory('.', 'sitemap.xml', mimetype='application/xml')
-
-@app.route('/robots.txt')
-def robots():
-    return send_from_directory('.', 'robots.txt', mimetype='text/plain')
 # ── Logging ───────────────────────────────────────────────────────────────────
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -71,7 +62,6 @@ if os.path.exists("components"):
     app.mount("/components", StaticFiles(directory="components"), name="components")
 
 # ── ARON Knowledge Base ───────────────────────────────────────────────────────
-# NOTE: Add Rehan's proprietary recipes and methods here for ARON Premium content.
 ARON_KNOWLEDGE = """
 ARON — ASIAN RESTAURANT OWNERS NETWORK
 
@@ -411,7 +401,7 @@ vector_store = FAISS.from_documents(chunks, embeddings)
 retriever = vector_store.as_retriever(search_kwargs={"k": 4})
 print("ARON knowledge base ready!")
 
-# ── System Prompt (Strict UK English + Hybrid Knowledge Logic) ────────────────
+# ── System Prompt ─────────────────────────────────────────────────────────────
 SYSTEM_PROMPT = """You are an AI assistant for ARON — Asian Restaurant Owners Network.
 You represent Rehan Uddin and ARON professionally on their website.
 You MUST use strict UK English spelling and vocabulary throughout ALL responses.
@@ -536,6 +526,15 @@ async def chat(request: Request, req: ChatRequest):
 
     return {"reply": reply}
 
+# ── Serve Sitemap & Robots ────────────────────────────────────────────────────
+@app.get("/sitemap.xml", include_in_schema=False)
+async def get_sitemap():
+    return FileResponse("sitemap.xml", media_type="application/xml")
+
+@app.get("/robots.txt", include_in_schema=False)
+async def get_robots():
+    return FileResponse("robots.txt", media_type="text/plain")
+
 # ── Serve Favicon ─────────────────────────────────────────────────────────────
 @app.get("/favicon.png")
 async def favicon_png():
@@ -567,5 +566,5 @@ async def serve_page(page: str):
 
 # ── Run Server ────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8080))
+    port = int(os.getenv("PORT", 8001))
     uvicorn.run(app, host="0.0.0.0", port=port)
